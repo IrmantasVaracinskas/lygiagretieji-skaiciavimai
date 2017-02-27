@@ -1,0 +1,52 @@
+Countries in North America:
+   4Antigua and Barbuda
+   4Bahamas
+   4Barbados
+   4Belize
+   4Canada
+   4Costa Rica
+   4Cuba
+   4Dominica
+   4Dominican Republic
+   4El Salvador
+   4Grenada
+   4Guatemala
+   4Haiti
+   4Honduras
+   4Jamaica
+   4Mexico
+   4Nicaragua
+   4Panama
+   4Saint Kitts and Nevis
+   4Saint Lucia
+   4Saint Vincent and the Grenadines
+   4Trinidad and Tobago
+   4United States
+Countries in Oceania:
+   5Australia
+   5Fiji
+   5Kiribati
+   5Marshall Islands
+   5Micronesia
+   5Nauru
+   5New Zealand
+   5Palau
+   5Papua New Guinea
+   5Samoa
+   5Solomon Islands
+   5Tonga
+   5Tuvalu
+   5Vanuatu
+Countries in South America:
+   6Argentina
+   6Bolivia
+   6Brazil
+   6Chile
+   6Colombia
+   6Ecuador
+   6Guyana
+   6Paraguay
+   6Peru
+   6Suriname
+   6Uruguay
+   6Venezuela

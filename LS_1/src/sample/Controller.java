@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class Controller {
 
@@ -19,84 +20,101 @@ public class Controller {
     private CheckBox cbOceania;
     @FXML
     private CheckBox cbSouthAmerica;
+    @FXML
+    private CheckBox cbSynced;
+
     public void onPrintClicked() throws IOException {
         Printer printer = new Printer();
+        ArrayList<Thread> threads = new ArrayList<Thread>();
         if(cbAfrica.isSelected()) {
-            new Thread(new Runnable() {
+            threads.add(new Thread(new Runnable() {
                 @Override
                 public void run() {
                     try {
-                        printer.writeTime(Region.AFRICA);
+                        printer.writeCountries(Region.AFRICA, cbSynced.isSelected());
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
-            }).start();
+            }));
         }
 
         if(cbAsia.isSelected()) {
-            new Thread(new Runnable() {
+            threads.add(new Thread(new Runnable() {
                 @Override
                 public void run() {
                     try {
-                        printer.writeTime(Region.ASIA);
+                        printer.writeCountries(Region.ASIA, cbSynced.isSelected());
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
-            }).start();
+            }));
         }
 
         if(cbEurope.isSelected()) {
-            new Thread(new Runnable() {
+            threads.add(new Thread(new Runnable() {
                 @Override
                 public void run() {
                     try {
-                        printer.writeTime(Region.EUROPE);
+                        printer.writeCountries(Region.EUROPE, cbSynced.isSelected());
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
-            }).start();
+            }));
         }
 
         if(cbNorthAmerica.isSelected()) {
-            new Thread(new Runnable() {
+            threads.add(new Thread(new Runnable() {
                 @Override
                 public void run() {
                     try {
-                        printer.writeTime(Region.NORTH_AMERICA);
+                        printer.writeCountries(Region.NORTH_AMERICA, cbSynced.isSelected());
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
-            }).start();
+            }));
         }
 
         if(cbOceania.isSelected()) {
-            new Thread(new Runnable() {
+            threads.add(new Thread(new Runnable() {
                 @Override
                 public void run() {
                     try {
-                        printer.writeTime(Region.OCEANIA);
+                        printer.writeCountries(Region.OCEANIA, cbSynced.isSelected());
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
-            }).start();
+            }));
         }
 
         if(cbSouthAmerica.isSelected()) {
-            new Thread(new Runnable() {
+            threads.add(new Thread(new Runnable() {
                 @Override
                 public void run() {
                     try {
-                        printer.writeTime(Region.SOUTH_AMERICA);
+                        printer.writeCountries(Region.SOUTH_AMERICA, cbSynced.isSelected());
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
-            }).start();
+            }));
         }
+
+        for(Thread t : threads){
+            t.start();
+        }
+        for(Thread t : threads){
+            try {
+                t.join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+
+        printer.close();
     }
 }
