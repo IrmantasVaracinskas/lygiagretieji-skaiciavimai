@@ -22,21 +22,6 @@ Countries in North America:
    4Saint Vincent and the Grenadines
    4Trinidad and Tobago
    4United States
-Countries in Oceania:
-   5Australia
-   5Fiji
-   5Kiribati
-   5Marshall Islands
-   5Micronesia
-   5Nauru
-   5New Zealand
-   5Palau
-   5Papua New Guinea
-   5Samoa
-   5Solomon Islands
-   5Tonga
-   5Tuvalu
-   5Vanuatu
 Countries in South America:
    6Argentina
    6Bolivia

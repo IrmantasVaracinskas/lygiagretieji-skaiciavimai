@@ -30,7 +30,7 @@ public class Printer implements Closeable {
         csvRecords = csvFileParser.getRecords();
         csvFileParser.close();
 
-        writer = new PrintWriter("out.txt");
+        writer = new PrintWriter("/./out.txt");
     }
     public void writeCountries(Region region, boolean sync) throws InterruptedException {
         if(sync){
