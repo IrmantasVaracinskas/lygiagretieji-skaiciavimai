@@ -5,9 +5,11 @@
 public class Database {
     private volatile int readers; // number of active readers
     private volatile boolean wantToWrite;
+	private int maxReaders;
 
 
-    public Database() {
+    public Database(int maxReaders) {
+		this.maxReaders = maxReaders;
         this.readers = 0;
         wantToWrite = false;
     }
@@ -20,7 +22,7 @@ public class Database {
                     while (wantToWrite) {// someone wants to write, so we have to wait
                         wait();
                     }
-                    if (readers < 4) {
+                    if (readers < maxReaders) {
                         readers++;
                         System.out.println("Reader " + number + " starts reading.");
                         System.out.println("    Current readers: " + readers);
